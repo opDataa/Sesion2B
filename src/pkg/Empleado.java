@@ -51,7 +51,7 @@ public class Empleado {
 		}
 		
 		
-		return nominaBruta+(1-retencion);
+		return nominaBruta*(1-retencion);
 		
 	}
 }
