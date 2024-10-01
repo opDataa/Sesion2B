@@ -5,42 +5,41 @@ public class Empleado {
 	public enum TipoEmpleado{VENDEDOR, ENCARGADO};
 
 	
-	private float salarioBase;
-	private float primas;
-	private float extras;
-	
-	public float calculoMonimaBruta(TipoEmpleado tipo, float ventasMes, float horasExtra) {
+	public static float calculoMonimaBruta(TipoEmpleado tipo, float ventasMes, float horasExtra) {
 		
+		
+		float salarioBase = 0;
 		// Determinar Salario Base 
 		switch(tipo) {
 			case TipoEmpleado.VENDEDOR:
-				this.salarioBase = 2000;
+				salarioBase = 2000;
 			break;
 			case TipoEmpleado.ENCARGADO:
-			this.salarioBase = 2500;
+				salarioBase = 2500;
 			break;
 		}
 		
 		// Determinar primas
+		float primas = 0;
 		if(ventasMes>=1500) {
-			this.primas = 200;
+			primas = 200;
 		}
 		else if(ventasMes>=1000) {
-			this.primas = 100;
+			primas = 100;
 		}
 		
 		
 		// Determinar Horas Extras
-		this.extras = horasExtra* 30;
+		float extras = horasExtra* 30;
 	
 		
-		return this.salarioBase+this.primas+this.extras;
+		return salarioBase+primas+extras;
 		
 	}
 	
 	
 	
-	public float calculoNominaNeta(float nominaBruta) {
+	public static float calculoNominaNeta(float nominaBruta) {
 		float retencion= 0;
 		
 		
